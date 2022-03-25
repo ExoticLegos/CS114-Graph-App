@@ -8,6 +8,13 @@ public class ButtonController : MonoBehaviour
     public Color32 color;
     public Color32 colorChange;
 
+
+    private void Awake()
+    {
+        // Sets the tag of the button 
+        gameObject.tag = "Button";
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +24,6 @@ public class ButtonController : MonoBehaviour
 
         // Gets the buttons color from button component
         color = GetComponent<Button>().colors.normalColor;
-
-        // Sets the tag of the button 
-        gameObject.tag = "Button";
-
     }
 
     // Update is called once per frame
@@ -37,7 +40,7 @@ public class ButtonController : MonoBehaviour
         // Gets the Button Controller game object
         GameObject buttonController = GameObject.FindGameObjectWithTag("ButtonController");
         // Sets the selected color
-        buttonController.GetComponent<ButtonController2>().currentColor = color;
+        buttonController.GetComponent<SelectedColor>().currentColor = color;
 
 
         // Finds the object with the outline tag
@@ -53,8 +56,9 @@ public class ButtonController : MonoBehaviour
         {
             outline.GetComponent<SpriteRenderer>().color = new Color32(colorChange.r -= 35, colorChange.g -= 35, colorChange.b -= 35, 255);
         }
-        
-        
-        
+
+        // Changes the cursor to the new color
+        Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/" + gameObject.name), Vector2.zero, CursorMode.Auto);
+
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonController2 : MonoBehaviour
+public class SelectedColor : MonoBehaviour
 {
 
     private Button[] Buttons;
@@ -17,7 +17,7 @@ public class ButtonController2 : MonoBehaviour
         Buttons = GetComponentsInChildren<Button>();
 
         // Sets default color
-        currentColor = new Color32(255, 52, 213, 255);
+        currentColor = new Color32(255, 255, 255, 255);
         
     }
 
