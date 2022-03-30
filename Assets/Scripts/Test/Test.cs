@@ -27,6 +27,7 @@ public class Test : MonoBehaviour
     private float lastKeyPressTime;
 
     Sprite[] textures;
+    public bool Amongus = false;
 
     private void Start()
     {
@@ -73,12 +74,18 @@ public class Test : MonoBehaviour
                 //GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Images/amongus");
 
 
-                Cursor.SetCursor(Resources.Load<Texture2D>("Images/amongusCur"), Vector2.zero, CursorMode.Auto);
+                
 
-
-
-
-
+                if (!Amongus)
+                {
+                    Amongus = true;
+                    Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/Amongus/" + GetComponent<SelectedColor>().currentColorName), Vector2.zero, CursorMode.Auto);
+                }
+                else
+                {
+                    Amongus = false;
+                    Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/" + GetComponent<SelectedColor>().currentColorName), Vector2.zero, CursorMode.Auto);
+                }
             }
         }
         // Wrong key pressed!

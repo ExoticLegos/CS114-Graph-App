@@ -17,7 +17,8 @@ public class PointLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chromTotal = StartUp.GetComponent<StartUp>().Preset + 2;
+        chromTotal = PointController.GetComponent<Presets>().PointsPreset.Length;
+
         Points = PointController.GetComponent<PointCreator>().Points;
         PRenderer = new SpriteRenderer[Points.Length];
 

@@ -9,6 +9,7 @@ public class SelectedColor : MonoBehaviour
     private Button[] Buttons;
 
     public Color32 currentColor;
+    public string currentColorName = "White";
 
     // Start is called before the first frame update
     void Start()

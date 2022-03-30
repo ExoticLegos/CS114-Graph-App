@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartUp : MonoBehaviour
 {
     public int Preset;
+    public GameObject exitMenu;
+    public GameObject menuPrefab;
+    private GameObject menu;
+    public Camera camera;
 
     private void Awake()
     {
@@ -22,7 +27,27 @@ public class StartUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            //exitMenu.GetComponent<SpriteRenderer>().enabled = true;
+            CreateMenu();
+            //Application.Quit();
         }
+    }
+
+
+    void CreateMenu()
+    {
+        menu = Instantiate(menuPrefab, Vector3.zero, Quaternion.identity);
+        menu.GetComponent<Canvas>().worldCamera = camera;
+        Button[] Buttons = menu.GetComponentsInChildren<Button>();
+        Buttons[0].GetComponent<Button>().onClick.AddListener(ExitApp);
+        Buttons[1].GetComponent<Button>().onClick.AddListener(CloseMenu);
+    }
+    public void ExitApp()
+    {
+        Application.Quit();
+    }
+    public void CloseMenu()
+    {
+        Destroy(menu);
     }
 }

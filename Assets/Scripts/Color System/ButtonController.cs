@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
     public Color32 colorChange;
 
 
+
     private void Awake()
     {
         // Sets the tag of the button 
@@ -41,12 +42,13 @@ public class ButtonController : MonoBehaviour
         GameObject buttonController = GameObject.FindGameObjectWithTag("ButtonController");
         // Sets the selected color
         buttonController.GetComponent<SelectedColor>().currentColor = color;
+        buttonController.GetComponent<SelectedColor>().currentColorName = gameObject.name;
 
 
         // Finds the object with the outline tag
         GameObject outline = GameObject.FindGameObjectWithTag("Outline");
         // Moves the outline object to the position of the button
-        outline.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z+0.001f);
+        outline.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z+0.009f);
         // Changes the color of the outline to a darker version of the button color
         if (colorChange.r <= 34)
         {
@@ -58,7 +60,14 @@ public class ButtonController : MonoBehaviour
         }
 
         // Changes the cursor to the new color
-        Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/" + gameObject.name), Vector2.zero, CursorMode.Auto);
+        if (buttonController.GetComponent<Test>().Amongus)
+        {
+            Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/Amongus/" + gameObject.name), Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/" + gameObject.name), Vector2.zero, CursorMode.Auto);
+        }
 
     }
 }

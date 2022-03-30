@@ -1669,6 +1669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Preset: 0
+  exitMenu: {fileID: 0}
+  menuPrefab: {fileID: 7272225275620139376, guid: c0c3e6ac3931ab545919147e1568c0af, type: 3}
+  camera: {fileID: 519420031}
 --- !u!4 &1050449587
 Transform:
   m_ObjectHideFlags: 0
@@ -1929,6 +1932,7 @@ GameObject:
   - component: {fileID: 1310095420}
   - component: {fileID: 1310095422}
   - component: {fileID: 1310095421}
+  - component: {fileID: 1310095423}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: ButtonController
@@ -1986,6 +1990,7 @@ MonoBehaviour:
   OnTimeRunnedOut:
     m_PersistentCalls:
       m_Calls: []
+  Amongus: 0
 --- !u!114 &1310095422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,6 +2006,19 @@ MonoBehaviour:
   currentColor:
     serializedVersion: 2
     rgba: 0
+  currentColorName: White
+--- !u!114 &1310095423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310095419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05d40c64db83bf48bbc173db31f5ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1340671750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,7 +2561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868366434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.19, y: -0.6, z: 187.01591}
+  m_LocalPosition: {x: -1.19, y: -0.6, z: 374.4142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484127379}

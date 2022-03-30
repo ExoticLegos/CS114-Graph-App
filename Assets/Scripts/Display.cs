@@ -8,6 +8,7 @@ public class Display : MonoBehaviour
     private int chromTotal;
     private int chromCount;
     private int colors;
+    private int colorsTotal;
 
     public GameObject Points;
 
@@ -26,6 +27,6 @@ public class Display : MonoBehaviour
 
     private void OnGUI()
     {
-        GetComponent<Text>().text = "Colors Used: " + colors + "\nChromatic Points: " + chromCount + "/" + chromTotal;
+        GetComponent<Text>().text = "Colors Used: " + colors + "/" + colorsTotal + "\nChromatic Points: " + chromCount + "/" + chromTotal;
     }
 }

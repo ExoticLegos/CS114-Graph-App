@@ -14,6 +14,7 @@ public class PointComparion : MonoBehaviour
     void Start()
     {
         PRenderer = PointController.GetComponent<PointLogic>().PRenderer;
+        //PointsToCompare
     }
 
     // Update is called once per frame
