@@ -8,6 +8,7 @@ TagManager:
   - ButtonController
   - Outline
   - Point
+  - PointController
   layers:
   - Default
   - TransparentFX

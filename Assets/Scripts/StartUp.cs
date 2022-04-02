@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartUp : MonoBehaviour
 {
     public int Preset;
-    public GameObject exitMenu;
     public GameObject menuPrefab;
     private GameObject menu;
-    public Camera camera;
+    public Camera cameraT;
 
     private void Awake()
     {
@@ -25,11 +25,9 @@ public class StartUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && menu == null)
         {
-            //exitMenu.GetComponent<SpriteRenderer>().enabled = true;
             CreateMenu();
-            //Application.Quit();
         }
     }
 
@@ -37,10 +35,11 @@ public class StartUp : MonoBehaviour
     void CreateMenu()
     {
         menu = Instantiate(menuPrefab, Vector3.zero, Quaternion.identity);
-        menu.GetComponent<Canvas>().worldCamera = camera;
+        menu.GetComponent<Canvas>().worldCamera = cameraT;
         Button[] Buttons = menu.GetComponentsInChildren<Button>();
         Buttons[0].GetComponent<Button>().onClick.AddListener(ExitApp);
         Buttons[1].GetComponent<Button>().onClick.AddListener(CloseMenu);
+        Buttons[2].GetComponent<Button>().onClick.AddListener(MainMenu);
     }
     public void ExitApp()
     {
@@ -49,5 +48,9 @@ public class StartUp : MonoBehaviour
     public void CloseMenu()
     {
         Destroy(menu);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 }

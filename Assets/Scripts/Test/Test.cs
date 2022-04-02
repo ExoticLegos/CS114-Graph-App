@@ -28,11 +28,12 @@ public class Test : MonoBehaviour
 
     Sprite[] textures;
     public bool Amongus = false;
+    public AudioSource source;
+    public AudioClip sus;
 
     private void Start()
     {
-        //textures = Resources.LoadAll<Sprite>("Images");
-        //GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Images/amongus");
+        
     }
 
 
@@ -80,6 +81,7 @@ public class Test : MonoBehaviour
                 {
                     Amongus = true;
                     Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/Amongus/" + GetComponent<SelectedColor>().currentColorName), Vector2.zero, CursorMode.Auto);
+                    source.PlayOneShot(sus);
                 }
                 else
                 {

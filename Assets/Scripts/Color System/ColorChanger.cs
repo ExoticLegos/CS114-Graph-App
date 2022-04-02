@@ -19,7 +19,8 @@ public class ColorChanger : MonoBehaviour
     {
         // Sets the color of the object to white on startup
         GetComponent<SpriteRenderer>().color = StartColor;
-        
+        controller = GameObject.FindGameObjectWithTag("ButtonController");
+
     }
 
     // Update is called once per frame

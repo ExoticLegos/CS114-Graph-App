@@ -5,32 +5,45 @@ using UnityEngine;
 public class PointComparion : MonoBehaviour
 {
     public GameObject PointController;
-    GameObject[] PointsToCompare;
-    SpriteRenderer[] PRenderer;
+    //GameObject[] PointsToCompare;
+    int[] PointsToCompare;
+    public SpriteRenderer[] PRenderer;
+    public int chrom;
+    public bool isChromatic = false;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        PRenderer = PointController.GetComponent<PointLogic>().PRenderer;
+        PointController = GameObject.FindGameObjectWithTag("PointController");
+        //PRenderer = PointController.GetComponent<PointLogic>().PRenderer;
         //PointsToCompare
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (PRenderer[0].color == PRenderer[1].color)
-        //{
-        //    //Debug.Log("hello");
-        //}
+        chrom = 0;
 
-        //for (int i = 0; i < Points.Length-1; i++)
+        //for (int i = 0; i < PointsToCompare.Length-1; i++)
         //{
-        //    if (PRenderer[i].color == PRenderer[i+1].color)
+        //    if (PRenderer[i].color != PRenderer[i+1].color)
         //    {
-        //        Debug.Log(i);
+        //        chrom++;
+        //        if (chrom == PointsToCompare.Length)
+        //        {
+        //            isChromatic = true;
+        //        }
+        //        else
+        //        {
+        //            isChromatic = false;
+        //        }
         //    }
         //}
+
     }
+
 }

@@ -17,12 +17,13 @@ public class Display : MonoBehaviour
     {
         chromTotal = Points.GetComponent<PointLogic>().chromTotal;
         chromCount = Points.GetComponent<PointLogic>().chromCount;
+        colorsTotal = Points.GetComponent<Presets>().MinColors;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        colors = Points.GetComponent<PointLogic>().colorsTotal;
     }
 
     private void OnGUI()
