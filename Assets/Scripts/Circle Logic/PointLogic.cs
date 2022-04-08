@@ -9,6 +9,7 @@ public class PointLogic : MonoBehaviour
     public GameObject StartUp;
     GameObject[] Points;
     public SpriteRenderer[] PRenderer;
+    public bool isGameWin = false;
 
 
     bool[] isChromatic = new bool[] { };
@@ -34,14 +35,9 @@ public class PointLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        chromCount = 0;
-
-        foreach (bool chrom in isChromatic)
+        if (chromTotal == chromCount && colorsTotal == GetComponent<Presets>().MinColors)
         {
-            if (chrom)
-            {
-                chromCount += 1;
-            }
+            isGameWin = true;
         }
 
         for (int i = 0; i < Points.Length; i++)
@@ -51,6 +47,7 @@ public class PointLogic : MonoBehaviour
 
 
         ColorCounter();
+        ChromCounter();
     }
 
     void ColorCounter()
@@ -64,5 +61,18 @@ public class PointLogic : MonoBehaviour
         }
 
         colorsTotal = colorsArray.Distinct().Count();
+    }
+
+    void ChromCounter()
+    {
+        chromCount = 0;
+
+        foreach (GameObject obj in Points)
+        {
+            if (obj.GetComponent<PointComparion>().isChromatic)
+            {
+                chromCount += 1;
+            }
+        }
     }
 }

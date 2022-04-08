@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     public GameObject controller;
+    public GameObject pointController;
     public Color32 StartColor = new Color32(255, 255, 255, 255);
 
     public Color32 newColor;
@@ -20,6 +21,7 @@ public class ColorChanger : MonoBehaviour
         // Sets the color of the object to white on startup
         GetComponent<SpriteRenderer>().color = StartColor;
         controller = GameObject.FindGameObjectWithTag("ButtonController");
+        pointController = GameObject.FindGameObjectWithTag("PointController");
 
     }
 
@@ -33,8 +35,10 @@ public class ColorChanger : MonoBehaviour
     {
         // Sets the newColor variable to the color set in the ButtonController script
         newColor = controller.GetComponent<SelectedColor>().currentColor;
-        // Applies the new color to object
-        GetComponent<SpriteRenderer>().color = newColor;
-
+        // Applies the new color to object if the game is not already done
+        if (!pointController.GetComponent<PointLogic>().isGameWin)
+        {
+            GetComponent<SpriteRenderer>().color = newColor;
+        }
     }
 }

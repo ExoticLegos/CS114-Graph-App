@@ -910,6 +910,7 @@ MonoBehaviour:
   PointController: {fileID: 484127377}
   StartUp: {fileID: 1050449585}
   PRenderer: []
+  isGameWin: 0
   chromTotal: 0
   chromCount: 0
   colorsTotal: 0
@@ -1686,7 +1687,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Preset: 0
   menuPrefab: {fileID: 8520526076682984110, guid: ca62af792ff419e4e9f24c72853570f6, type: 3}
+  winMenuPrefab: {fileID: 1287854026838447006, guid: d0c637198df2d7f4891e464fc5642494, type: 3}
   cameraT: {fileID: 519420031}
+  PointController: {fileID: 484127377}
 --- !u!4 &1050449587
 Transform:
   m_ObjectHideFlags: 0

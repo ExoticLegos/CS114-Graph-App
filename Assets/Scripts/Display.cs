@@ -16,7 +16,6 @@ public class Display : MonoBehaviour
     void Start()
     {
         chromTotal = Points.GetComponent<PointLogic>().chromTotal;
-        chromCount = Points.GetComponent<PointLogic>().chromCount;
         colorsTotal = Points.GetComponent<Presets>().MinColors;
     }
 
@@ -24,6 +23,7 @@ public class Display : MonoBehaviour
     void Update()
     {
         colors = Points.GetComponent<PointLogic>().colorsTotal;
+        chromCount = Points.GetComponent<PointLogic>().chromCount;
     }
 
     private void OnGUI()
