@@ -58,6 +58,7 @@ public class StartUp : MonoBehaviour
     }
     public void MainMenu()
     {
+        Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/" + gameObject.name), Vector2.zero, CursorMode.Auto);
         SceneManager.LoadScene("TitleScene");
     }
 

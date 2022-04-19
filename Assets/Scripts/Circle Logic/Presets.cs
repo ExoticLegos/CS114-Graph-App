@@ -12,24 +12,28 @@ public class Presets : MonoBehaviour
     Vector3[] Preset1Circle = new[] { new Vector3(-1.19f, -0.6f, 187.0159f), new Vector3(3.16f, 2.425f, 187.0159f), new Vector3(-5.161f, 2.425f, 187.0159f), new Vector3(-5.161f, -3.574f, 187.0159f), new Vector3(3.16f, -3.574f, 187.0159f), new Vector3(6.9f, -0.6f, 187.0159f) };
     int[,] Preset1Connect = new int[,] { { 2, 5, 0 }, { 1, 3, 6 }, { 2, 4, 0 }, { 3, 5, 0 }, { 4, 1, 6 }, { 5, 2, 0 } };
     int Colors1Min = 3;
+
     Vector3[] Preset2Circle = new[] { new Vector3(0f, 0f, 187.0159f), new Vector3(-3f, 3f, 187.0159f), new Vector3(-5f, 0f, 187.0159f), new Vector3(-3f, -3f, 187.0159f), new Vector3(3f, -3f, 187.0159f), new Vector3(5f, 0f, 187.0159f), new Vector3(3f, 3f, 187.0159f) };
     int[,] Preset2Connect = new int[,] { { 2, 3, 7 }, { 1, 3, 7 }, { 1, 2, 4 }, { 3, 5, 6 }, { 4, 6, 0 }, { 4, 5, 7 }, { 1, 2, 6 } };
     int Colors2Min = 3;
-    Vector3[] Preset3Circle;
-    int[,] Preset3Connect;
-    int Colors3Min = 0;
-    Vector3[] Preset4Circle;
-    int[,] Preset4Connect;
+
+    Vector3[] Preset3Circle = new[] { new Vector3(-0.05f, 0f, 187.0159f), new Vector3(2.59f, -2.49f, 187.0159f), new Vector3(-2.59f, -2.47f, 187.0159f), new Vector3(-2.79f, 2.11f, 187.0159f), new Vector3(2.69f, 2.14f, 187.0159f), new Vector3(5.13f, -0.15f, 187.0159f), new Vector3(-5.28f, -0.2f, 187.0159f), new Vector3(0f, 4.02f, 187.0159f), new Vector3(0f, -4.02f, 187.0159f) };
+    int[,] Preset3Connect = new int[,] { { 2, 3, 4, 5, 6, 7, 8, 9 }, { 1, 3, 5, 9, 0, 0, 0 ,0 }, { 1, 2, 4, 7, 0, 0, 0, 0 }, { 1, 5, 3, 8, 0, 0, 0, 0 }, { 1, 4, 0, 6, 0, 0, 0, 0 }, { 5, 1, 0, 0, 0, 0, 0, 0 }, { 3, 1, 0, 0, 0, 0, 0, 0 }, { 4, 1, 0, 0, 0, 0, 0, 0 }, { 2, 1, 0, 0, 0, 0, 0, 0 } };
+    int Colors3Min = 4;
+
+    Vector3[] Preset4Circle = new[] { new Vector3(0f, 0f, 187.0159f), new Vector3(-3f, 3f, 187.0159f), new Vector3(-5f, 0f, 187.0159f), new Vector3(-3f, -3f, 187.0159f), new Vector3(3f, -3f, 187.0159f), new Vector3(5f, 0f, 187.0159f), new Vector3(3f, 3f, 187.0159f) };
+    int[,] Preset4Connect = new int[,] { { 2, 3, 7 }, { 1, 3, 7 }, { 1, 2, 4 }, { 3, 5, 6 }, { 4, 6, 0 }, { 4, 5, 7 }, { 1, 2, 6 } };
     int Colors4Min = 0;
-    Vector3[] Preset5Circle;
-    int[,] Preset5Connect;
+
+    Vector3[] Preset5Circle = new[] { new Vector3(0f, 0f, 187.0159f), new Vector3(-3f, 3f, 187.0159f), new Vector3(-5f, 0f, 187.0159f), new Vector3(-3f, -3f, 187.0159f), new Vector3(3f, -3f, 187.0159f), new Vector3(5f, 0f, 187.0159f), new Vector3(3f, 3f, 187.0159f) };
+    int[,] Preset5Connect = new int[,] { { 2, 3, 7 }, { 1, 3, 7 }, { 1, 2, 4 }, { 3, 5, 6 }, { 4, 6, 0 }, { 4, 5, 7 }, { 1, 2, 6 } };
     int Colors5Min = 0;
 
 
     private void Awake()
     {
-        Preset = Random.Range(1, 3);
-        //Preset = 2;
+        Preset = Random.Range(1, 4);
+
 
         // Sets PointPreset to the array of the randomly selected number
         switch (Preset)

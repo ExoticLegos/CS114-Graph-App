@@ -17,6 +17,7 @@ public class PointComparion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Finds the point objects and adds them to and array
         PointController = GameObject.FindGameObjectWithTag("PointController");
         PRenderer = PointController.GetComponent<PointLogic>().PRenderer;
         PointsToCompare = new int[PointController.GetComponent<Presets>().ConnectPreset.GetUpperBound(1) + 1];
@@ -39,7 +40,7 @@ public class PointComparion : MonoBehaviour
     {
         chrom = 0;
         
-
+        // Checks if each point in the array is chromatic by comparing its color to the connected points colors
         for (int i = 1; i < PointsToCompare.Length+1; i++)
         {
             if (PointsToCompare[i-1] != 0)
@@ -54,6 +55,7 @@ public class PointComparion : MonoBehaviour
                     else
                     {
                         isChromatic = false;
+
                     }
                 }
             }

@@ -26,19 +26,16 @@ public class PointCreator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void PointCreation()
     {
+        // Gets positions for the points from the preset
         Vector3[] positions = GetComponent<Presets>().PointsPreset;
 
+        // Creates a point for each position in the array
         for (int i = 0; i < positions.Length; i++)
         {
-            Instantiate(Point, new Vector3(positions[i].x + 1.16f, positions[i].y + 0.6f, 187.0159f), Quaternion.identity, parent);
+            Instantiate(Point, new Vector3(positions[i].x + 1.16f, positions[i].y + 0.6f, 157.0159f), Quaternion.identity, parent);
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Display : MonoBehaviour
 {
@@ -28,6 +29,6 @@ public class Display : MonoBehaviour
 
     private void OnGUI()
     {
-        GetComponent<Text>().text = "Colors Used: " + colors + "/" + colorsTotal + "\nChromatic Points: " + chromCount + "/" + chromTotal;
+        GetComponent<TextMeshProUGUI>().text = "Colors Used: " + colors + "/" + colorsTotal + "\nChromatic Points: " + chromCount + "/" + chromTotal;
     }
 }
