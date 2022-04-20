@@ -11,6 +11,9 @@ public class PointComparion : MonoBehaviour
     public int chrom;
     public bool isChromatic = false;
     int Zeros = 0;
+    public GameObject Outline;
+    public GameObject isOutline;
+    Color32 colorChange;
 
 
 
@@ -33,13 +36,16 @@ public class PointComparion : MonoBehaviour
                 Zeros += 1;
             }
         }
+
+        Outline = Resources.Load<GameObject>("Prefabs/Outline");
     }
 
     // Update is called once per frame
     void Update()
     {
         chrom = 0;
-        
+        colorChange = GetComponent<SpriteRenderer>().color;
+
         // Checks if each point in the array is chromatic by comparing its color to the connected points colors
         for (int i = 1; i < PointsToCompare.Length+1; i++)
         {
@@ -52,14 +58,23 @@ public class PointComparion : MonoBehaviour
                     {
                         isChromatic = true;
                     }
-                    else
-                    {
-                        isChromatic = false;
-
-                    }
                 }
             }
             
+        }
+        if (chrom != PointsToCompare.Length - Zeros)
+        {
+            isChromatic = false;
+        }
+
+        if (isOutline == null && isChromatic == true)
+        {
+            isOutline = Instantiate(Outline, new Vector3(GetComponent<Transform>().position.x, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z + 0.22f), Quaternion.identity, GetComponent<Transform>());
+            isOutline.GetComponent<SpriteRenderer>().color = new Color32(111, 241, 142, 255);
+        }
+        if (isChromatic == false && isOutline != null)
+        {
+            Destroy(isOutline);
         }
 
     }

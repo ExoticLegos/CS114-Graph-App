@@ -21,18 +21,18 @@ public class Presets : MonoBehaviour
     int[,] Preset3Connect = new int[,] { { 2, 3, 4, 5, 6, 7, 8, 9 }, { 1, 3, 5, 9, 0, 0, 0 ,0 }, { 1, 2, 4, 7, 0, 0, 0, 0 }, { 1, 5, 3, 8, 0, 0, 0, 0 }, { 1, 4, 0, 6, 0, 0, 0, 0 }, { 5, 1, 0, 0, 0, 0, 0, 0 }, { 3, 1, 0, 0, 0, 0, 0, 0 }, { 4, 1, 0, 0, 0, 0, 0, 0 }, { 2, 1, 0, 0, 0, 0, 0, 0 } };
     int Colors3Min = 4;
 
-    Vector3[] Preset4Circle = new[] { new Vector3(0f, 0f, 187.0159f), new Vector3(-3f, 3f, 187.0159f), new Vector3(-5f, 0f, 187.0159f), new Vector3(-3f, -3f, 187.0159f), new Vector3(3f, -3f, 187.0159f), new Vector3(5f, 0f, 187.0159f), new Vector3(3f, 3f, 187.0159f) };
-    int[,] Preset4Connect = new int[,] { { 2, 3, 7 }, { 1, 3, 7 }, { 1, 2, 4 }, { 3, 5, 6 }, { 4, 6, 0 }, { 4, 5, 7 }, { 1, 2, 6 } };
-    int Colors4Min = 0;
+    Vector3[] Preset4Circle = new[] { new Vector3(0.27f, 3.04f, 187.0159f), new Vector3(0.27f, -2.04f, 187.0159f), new Vector3(3.34f, 0.44f, 187.0159f), new Vector3(7.62f, 0.44f, 187.0159f), new Vector3(-2.97f, 0.44f, 187.0159f), new Vector3(-6.88f, 0.44f, 187.0159f)};
+    int[,] Preset4Connect = new int[,] { { 3, 4, 5, 6 }, { 3, 4, 5, 6 }, { 1, 2, 4, 0 }, { 1, 2, 3, 0 }, { 1, 2, 6, 0 }, { 1, 2, 5, 0 } };
+    int Colors4Min = 3;
 
-    Vector3[] Preset5Circle = new[] { new Vector3(0f, 0f, 187.0159f), new Vector3(-3f, 3f, 187.0159f), new Vector3(-5f, 0f, 187.0159f), new Vector3(-3f, -3f, 187.0159f), new Vector3(3f, -3f, 187.0159f), new Vector3(5f, 0f, 187.0159f), new Vector3(3f, 3f, 187.0159f) };
-    int[,] Preset5Connect = new int[,] { { 2, 3, 7 }, { 1, 3, 7 }, { 1, 2, 4 }, { 3, 5, 6 }, { 4, 6, 0 }, { 4, 5, 7 }, { 1, 2, 6 } };
-    int Colors5Min = 0;
+    Vector3[] Preset5Circle = new[] { new Vector3(0.27f, 3.04f, 187.0159f), new Vector3(5.51f, 3.04f, 187.0159f), new Vector3(2.9f, 0.44f, 187.0159f), new Vector3(5.78f, -1.58f, 187.0159f), new Vector3(0.27f, -1.58f, 187.0159f), new Vector3(-3.55f, 0.44f, 187.0159f), new Vector3(-6.2f, 3.04f, 187.0159f), new Vector3(-6.2f, -1.58f, 187.0159f) };
+    int[,] Preset5Connect = new int[,] { { 2, 6, 7 }, { 1, 3, 4 }, { 2, 4, 5 }, { 2, 3, 0 }, { 3, 6, 8 }, { 1, 7, 0 }, { 6, 8, 1 }, { 7, 5, 0 } };
+    int Colors5Min = 3;
 
 
     private void Awake()
     {
-        Preset = Random.Range(1, 4);
+        Preset = Random.Range(1, 6);
 
 
         // Sets PointPreset to the array of the randomly selected number

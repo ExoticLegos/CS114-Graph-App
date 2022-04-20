@@ -489,7 +489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Project That Does Things
+  m_text: Chromatic Graph Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 10fd032429436ce488891aca1634f02a, type: 2}
   m_sharedMaterial: {fileID: -8145202530139018623, guid: 10fd032429436ce488891aca1634f02a, type: 2}
